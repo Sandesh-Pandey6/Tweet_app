@@ -20,10 +20,12 @@ from django.urls import path,include
 from . import views 
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.urls import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.first_page, name='home'),
     path('sub_app/', include('sub_app.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:
