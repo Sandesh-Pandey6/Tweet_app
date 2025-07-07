@@ -5,6 +5,10 @@ from django.shortcuts import get_object_or_404, redirect
 
 
 
+
+
+
+
 # Create your views here.
 def tweet_list(request):
     tweets = Tweet.objects.all().order_by('-created_at') 
@@ -34,7 +38,7 @@ def tweet_edit(request, tweet_id):
             return redirect('tweet_list')
     else:
         form = TweetForm(instance=tweet)
-    return render(request, 'tweet_form.html', {'form': form})
+    return render(request, 'sub_app/tweet_form.html', {'form': form})
 
 
 
