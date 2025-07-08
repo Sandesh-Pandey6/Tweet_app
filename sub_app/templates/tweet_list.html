@@ -59,7 +59,12 @@ Sub_app
 <div class="container row gap-3">
     {% for tweet in tweets %}
     <div class="card" style="width: 18rem;">
-        <img src="{{ tweet.photo.url }}" class="card-img-top" alt="...">
+      {% if tweet.photo %}
+    <img src="{{ tweet.photo.url }}" alt="Tweet photo">
+{% else %}
+    <p>No photo available</p>
+{% endif %}
+        
         <div class="card-body">
             <h5 class="card-title">{{ tweet.user.username }}</h5>
             <p class="card-text">{{ tweet.text }}</p>

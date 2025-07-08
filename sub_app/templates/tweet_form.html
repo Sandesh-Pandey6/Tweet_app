@@ -1,14 +1,12 @@
 {% extends "layout.html" %}
 
-
-{%block title %}
-to edit buttoon
-
-{%endblock%}
+{% block title %}
+dont know
+{% endblock %}
 
 {%block content%}
 
-<h2> 
+<h1> 
 {% if form.instance.pk %}
 Edit Tweet
 {% else %}
@@ -24,6 +22,6 @@ Create tweet
 <a href="{%url 'tweet_list'%}">Go back to tweet page</a>
 
 
-</h2>
+</h1>
 
 {%endblock%}
